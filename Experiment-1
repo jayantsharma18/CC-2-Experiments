@@ -1,0 +1,69 @@
+EXPERIMENT 1.1 (LEETCODE Problem 217)
+
+Aim - Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Algorithm - 
+
+Create an empty HashSet.
+Traverse each element in the array:
+If the element is already present in the HashSet, return true (duplicate found).
+Otherwise, add the element to the HashSet.
+If the loop finishes without finding any duplicate, return false.
+
+Code - 
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        for(int i=1; i<nums.size(); i++)
+        {
+            if(nums[i]==nums[i-1])
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+
+
+
+EXPERIMENT 1.2 (LEETCODE Problem 219)
+
+Aim - Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
+
+Algorithm - 
+
+Create an empty HashMap to store each element and its latest index.
+Traverse the array from left to right.
+For each element:
+If the element already exists in the HashMap:
+Calculate the distance between the current index and the stored index.
+If the distance is less than or equal to k, return true.
+Update the element's index in the HashMap with the current index.
+If the entire array is traversed without finding such a pair, return false.
+
+Code - 
+
+class Solution {
+public:
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        unordered_map<int,int>mp;
+        for (int i=0; i<nums.size(); i++)
+        {
+            if (mp.find(nums[i])!=mp.end() && abs (i-mp[nums[i]]) <=k)
+            {
+                return true;
+            }
+            mp[nums[i]]=i;
+        }
+        return false;
+    }
+};
+
+
+
+
+
