@@ -2,7 +2,7 @@ EXPERIMENT - 3 (LEETCODE Problem 232)
 
 Aim - Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (push, peek, pop, and empty).
 
-Algorithm - Algorithm: Implement Queue Using Two Stacks
+Algorithm - Implement Queue Using Two Stacks
 
             Step 1: Create two stacks, Stack1 and Stack2.
 
